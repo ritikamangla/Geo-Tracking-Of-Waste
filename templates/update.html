@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Status</legend>
+
+                <div class="form-group">
+                    {{ form.waste_id.label(class="form-control-label") }}
+                    {% if form.waste_id.errors %}
+                    {{ form.waste_id(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.waste_id.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.waste_id(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.truck_dry.label(class="form-control-label") }}
+                    {% if form.truck_dry.errors %}
+                    {{ form.truck_dry(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.truck_dry.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.truck_dry(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.truck_wet.label(class="form-control-label") }}
+                    {% if form.truck_wet.errors %}
+                    {{ form.truck_wet(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.truck_wet.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.truck_wet(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+   
+
+                <div class="form-group">
+                    {{ form.truck_loc.label(class="form-control-label") }}
+                    {% if form.truck_loc.errors %}
+                    {{ form.truck_loc(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.truck_loc.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.truck_loc(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>           
+
+                
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
